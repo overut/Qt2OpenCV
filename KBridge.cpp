@@ -43,7 +43,7 @@ QImage KBridge::cvMat2QImage(const cv::Mat &mat)
         qDebug() << "CV_8UC4";
         // Copy input Mat
         const uchar *pSrc = (const uchar*)mat.data;
-        // Create QImage with same dimensions as input Mat
+        // Create QImage with same dimensions as input Mat ARGB is mean Alpha(透明度) RGB
         QImage image(pSrc, mat.cols, mat.rows, static_cast<int>(mat.step), QImage::Format_ARGB32);
         return image.copy();
     }
